@@ -15,7 +15,7 @@ function Login() {
     if (!phone) { toast.error('Phone number daalo!'); return; }
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/auth/send-otp', { phone });
+      await axios.post('https://rubaroo-production-dfa1.up.railway.app/api/auth/send-otp', { phone });
       toast.success('OTP bheja gaya!');
       setStep('otp');
     } catch (err) {
@@ -28,7 +28,7 @@ function Login() {
     if (!otp) { toast.error('OTP daalo!'); return; }
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/verify-phone-otp', { phone, otp });
+      const res = await axios.post('https://rubaroo-production-dfa1.up.railway.app/api/auth/verify-phone-otp', { phone, otp });
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       toast.success('Welcome back to RUBAROO!');

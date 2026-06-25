@@ -17,7 +17,7 @@ function Register() {
     }
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/auth/send-otp', { phone });
+      await axios.post('https://rubaroo-production-dfa1.up.railway.app/api/auth/send-otp', { phone });
       toast.success('OTP bheja gaya!');
       navigate('/verify-otp', { state: { phone, name } });
     } catch (err) {

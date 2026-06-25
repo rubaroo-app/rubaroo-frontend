@@ -17,7 +17,7 @@ function OtpVerify() {
     }
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/verify-phone-otp', {
+      const res = await axios.post('https://rubaroo-production-dfa1.up.railway.app/api/auth/verify-phone-otp', {
         phone,
         otp,
         name
