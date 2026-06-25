@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///C:/Users/MEENAKSHI/Downloads/index_2.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RUBAROO — Where Delhi Meets Destiny</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────────────
+   DESIGN TOKENS
+───────────────────────────────────────────── */
+:root{
+  --ink:       #08070A;
+  --ink-2:     #12101A;
+  --ink-3:     #1E1B28;
+  --smoke:     #2C2837;
+  --mist:      #9896A4;
+  --silver:    #C8C6D2;
+  --white:     #FAFAF8;
+  --accent:    #E8173A;
+  --accent-dk: #B80F2C;
+  --accent-lt: #FF3D5C;
+  --gold:      #D4A853;
+  --gold-lt:   #EBC87A;
+  --cream:     #F5F0E8;
+  --cream-dk:  #ECE5D8;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:var(--ink);color:#000000;
+  overflow-x:hidden;cursor:default;
+}
+img,svg{display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer}
+
+/* ─────────────────────────────────────────────
+   UTILITY
+───────────────────────────────────────────── */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ─────────────────────────────────────────────
+   COOKIE CONSENT  (minimal, not intrusive)
+───────────────────────────────────────────── */
+#cookie{
+  position:fixed;bottom:0;left:0;right:0;z-index:2000;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;flex-wrap:wrap;
+  background:#374151;
+  border-top:3px solid #1E2A3A;
+  padding:16px 48px;
+  box-shadow:0 -4px 20px rgba(0,0,0,0.25);
+  animation:slideUp 0.5s 1s both cubic-bezier(.4,0,.2,1);
+}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.cookie-text{
+  flex:1;font-size:13px;line-height:1.7;
+  color:#FFFFFF;font-weight:500;
+}
+.cookie-text a{
+  color:#93C5FD;font-weight:700;
+  border-bottom:1px solid rgba(147,197,253,.35);
+  text-decoration:none;transition:color .2s;
+}
+.cookie-text a:hover{color:#BFDBFE;border-bottom-color:#BFDBFE}
+.cookie-text strong{color:#FFFFFF;font-weight:800}
+.cookie-btns{
+  display:flex;gap:10px;align-items:center;flex-shrink:0;
+}
+.ck-acc{
+  padding:10px 26px;
+  background:#1D4ED8;color:#FFFFFF;
+  border:2px solid #1D4ED8;border-radius:50px;
+  font-size:13px;font-weight:700;
+  white-space:nowrap;transition:all .2s;cursor:pointer;
+  letter-spacing:0.3px;
+  box-shadow:0 4px 14px rgba(29,78,216,0.4);
+}
+.ck-acc:hover{background:#1E40AF;border-color:#1E40AF;transform:translateY(-1px);box-shadow:0 6px 18px rgba(29,78,216,0.5)}
+.ck-mng{
+  padding:10px 22px;
+  background:transparent;color:#FFFFFF;
+  border:2px solid rgba(255,255,255,.4);border-radius:50px;
+  font-size:13px;font-weight:600;cursor:pointer;
+  white-space:nowrap;transition:all .2s;
+}
+.ck-mng:hover{background:rgba(255,255,255,.1);border-color:#FFFFFF;transform:translateY(-1px)}
+
+/* ─────────────────────────────────────────────
+   NAVIGATION
+───────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  display:flex;align-items:center;justify-content:space-between;
+  height:68px;padding:0 48px;
+  background:rgba(255,194,0,0.97);
+  border-bottom:1px solid rgba(255,255,255,.2);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  transition:border-color .3s;
+}
+nav.scrolled{border-bottom-color:rgba(232,23,58,.2)}
+
+/* Brand */
+.nav-brand{display:flex;flex-direction:column;line-height:1;gap:4px;align-items:center;text-align:center}
+.nav-brand-en{
+  font-family:'Cormorant Garant',serif;font-size:26px;font-weight:700;
+  letter-spacing:6px;color:#000000;text-align:center;
+}
+.nav-brand-hi{font-size:13px;letter-spacing:6px;color:#000000;font-weight:700;text-align:center;}
+
+/* Links */
+.nav-links{display:flex;list-style:none;gap:0}
+.nav-links a{
+  display:block;padding:10px 16px;
+  font-size:13px;font-weight:700;color:#000000;
+  transition:color .2s;position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:6px;left:16px;right:16px;
+  height:1px;background:var(--accent);
+  transform:scaleX(0);transition:transform .25s ease;
+}
+.nav-links a:hover{color:#000000}
+.nav-links a:hover::after{transform:scaleX(1)}
+
+/* Nav CTAs */
+.nav-cta{display:flex;gap:10px;align-items:center}
+.n-ghost{
+  padding:8px 22px;border:none;
+  border-radius:50px;font-size:13px;font-weight:700;
+  color:#FFFFFF;background:#0A1F6E;
+  transition:all .25s;
+}
+.n-ghost:hover{background:#061550;color:#FFFFFF;transform:translateY(-1px);box-shadow:0 4px 16px rgba(10,31,110,0.5)}
+.n-solid{
+  padding:8px 22px;border:none;border-radius:50px;
+  font-size:13px;font-weight:600;color:#000000;
+  background:var(--accent);
+  box-shadow:0 0 0 0 rgba(232,23,58,.4);
+  transition:all .25s;
+}
+.n-solid:hover{background:var(--accent-lt);box-shadow:0 4px 20px rgba(232,23,58,.5);transform:translateY(-1px)}
+
+/* ─────────────────────────────────────────────
+   HERO
+───────────────────────────────────────────── */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:120px 24px 80px;overflow:hidden;
+  background:#FFC200;
+}
+
+/* Ambient gradients */
+.hero-ambient{position:absolute;inset:0;z-index:0;pointer-events:none}
+.amb-1{
+  position:absolute;top:-20%;left:-10%;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,0,0,0.25) 0%,transparent 70%);
+  animation:ambDrift 20s ease-in-out infinite alternate;
+}
+.amb-2{
+  position:absolute;bottom:-30%;right:-15%;
+  width:800px;height:800px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,0.15) 0%,transparent 65%);
+  animation:ambDrift 26s ease-in-out infinite alternate-reverse;
+}
+.amb-3{
+  position:absolute;top:40%;left:40%;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,0,0,0.12) 0%,transparent 70%);
+  animation:ambDrift 18s ease-in-out infinite;
+}
+@keyframes ambDrift{
+  from{transform:translate(0,0) scale(1)}
+  to{transform:translate(40px,30px) scale(1.08)}
+}
+
+/* Heartbeat canvas */
+#hbCanvas{
+  position:absolute;top:50%;left:0;right:0;
+  transform:translateY(-50%);z-index:1;
+  pointer-events:none;height:120px;width:100%;
+  opacity:.25;
+}
+
+/* Grid lines */
+.hero-grid{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(0,0,0,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,0,0,.06) 1px,transparent 1px);
+  background-size:80px 80px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black 30%,transparent 100%);
+}
+
+/* Hero content */
+.hero-content{
+  position:relative;z-index:2;
+  text-align:center;max-width:800px;
+}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1.5px solid rgba(0,0,0,.4);
+  background:rgba(0,0,0,.08);
+  padding:7px 18px;border-radius:50px;
+  margin-bottom:32px;
+  animation:fadeIn .8s .2s both;
+}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.pill-dot{
+  width:6px;height:6px;border-radius:50%;background:#000000;
+  animation:pdot 2s infinite;
+}
+@keyframes pdot{
+  0%,100%{box-shadow:0 0 0 0 rgba(212,168,83,.6)}
+  50%{box-shadow:0 0 0 5px rgba(212,168,83,0)}
+}
+.pill-text{font-size:12px;font-weight:800;color:#000000;letter-spacing:1.5px;text-transform:uppercase}
+
+.hero-h1{
+  font-family:'Cormorant Garant',serif;
+  font-size:clamp(56px,7vw,104px);
+  font-weight:700;line-height:.95;
+  letter-spacing:-2px;color:#000000;
+  margin-bottom:8px;
+  animation:fadeIn .8s .4s both;
+}
+.hero-h1 em{
+  font-style:italic;color:#000000;
+  -webkit-text-stroke:0px transparent;
+  display:block;
+  font-weight:700;
+}
+.hero-h1 strong{font-weight:600;color:#000000;display:block}
+
+.hero-tagline{
+  font-family:'Cormorant Garant',serif;
+  font-size:clamp(14px,1.6vw,18px);
+  font-weight:700;font-style:italic;
+  color:#000000;letter-spacing:2px;
+  margin-bottom:48px;
+  animation:fadeIn .8s .6s both;
+}
+
+/* ── Login block ── */
+.hero-login{
+  background:#0A1F6E;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:24px;padding:32px 36px;
+  max-width:440px;margin:0 auto 32px;
+  backdrop-filter:blur(16px);
+  animation:fadeIn .8s .8s both;
+  text-align:left;
+}
+.login-label{
+  font-size:11px;font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:16px;
+}
+
+/* Phone input */
+.phone-wrap{
+  display:flex;gap:8px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:14px;padding:6px;
+  margin-bottom:12px;
+  transition:border-color .2s;
+}
+.phone-wrap:focus-within{border-color:rgba(255,255,255,.7)}
+.ph-flag{
+  display:flex;align-items:center;gap:5px;
+  background:rgba(255,255,255,.2);border:none;
+  border-radius:10px;padding:10px 12px;
+  font-size:14px;font-weight:700;color:#FFFFFF;
+  white-space:nowrap;transition:background .2s;
+}
+.ph-flag:hover{background:rgba(255,255,255,.14)}
+.ph-in{
+  flex:1;background:transparent;border:none;
+  font-size:16px;color:#FFFFFF;font-weight:600;padding:10px 6px;
+  outline:none;font-family:'DM Sans',sans-serif;
+}
+.ph-in::placeholder{color:rgba(255,255,255,.5)}
+.ph-go{
+  padding:10px 20px;background:var(--accent);color:#000000;
+  border:none;border-radius:10px;font-size:14px;font-weight:600;
+  white-space:nowrap;transition:all .2s;
+  box-shadow:0 4px 16px rgba(232,23,58,.4);
+}
+.ph-go:hover{background:var(--accent-lt);transform:scale(1.03)}
+
+/* Divider */
+.div-or{
+  display:flex;align-items:center;gap:12px;
+  color:rgba(255,255,255,.7);font-size:11px;letter-spacing:1px;
+  margin-bottom:12px;font-weight:700;
+}
+.div-or::before,.div-or::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.3)}
+
+/* Social buttons */
+.soc-row{display:flex;gap:8px;margin-bottom:20px}
+.soc-btn{
+  flex:1;padding:11px 8px;
+  background:#FFC200;
+  border:2px solid #000000;
+  border-radius:12px;color:#000000;
+  font-size:13px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  transition:all .2s;
+}
+.soc-btn:hover{background:#FFD000;border-color:#000000;color:#000000}
+.g-circle{
+  width:16px;height:16px;border-radius:50%;flex-shrink:0;
+  background:conic-gradient(#EA4335 0 90deg,#FBBC04 90deg 180deg,#34A853 180deg 270deg,#4285F4 270deg);
+}
+
+/* App row */
+.app-row{
+  display:flex;gap:8px;padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.2);
+  align-items:center;flex-wrap:wrap;
+}
+.app-btn{
+  display:flex;align-items:center;gap:9px;
+  padding:9px 14px;background:#FFC200;
+  border:2px solid #000000;border-radius:11px;
+  color:#000000;transition:all .2s;flex:1;min-width:130px;
+}
+.app-btn:hover{background:#FFD000;transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+.app-ico{font-size:18px}
+.app-txt-sm span{display:block;font-size:8px;color:rgba(0,0,0,.6);font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.app-txt-sm strong{font-size:12px;font-weight:800;color:#000000}
+.qr-wrap{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding:8px 12px;background:#FFC200;
+  border:2px solid #000000;border-radius:11px;
+}
+.qr-tiny{
+  width:38px;height:38px;background:var(--white);border-radius:4px;
+  padding:3px;display:grid;grid-template-columns:repeat(5,6px);gap:1px;
+}
+.qr-tiny b{border-radius:1px;background:var(--ink);display:block}
+.qr-tiny b.w{background:transparent}
+.qr-wrap-lbl{font-size:8px;color:#000000;font-weight:700;text-align:center;letter-spacing:.5px}
+
+/* ── Swipe demo (below hero login) ── */
+.swipe-demo{
+  position:relative;z-index:2;
+  display:flex;gap:16px;justify-content:center;
+  animation:fadeIn 1s 1.2s both;
+}
+.demo-card{
+  width:180px;height:260px;border-radius:20px;
+  overflow:hidden;position:relative;
+  box-shadow:0 24px 60px rgba(0,0,0,.5);
+  transform:translateY(0);transition:transform .4s ease;
+}
+.demo-card:hover{transform:translateY(-8px)}
+.demo-card-1{transform:rotate(-5deg) translateY(20px)}
+.demo-card-2{transform:rotate(0deg);z-index:2}
+.demo-card-3{transform:rotate(5deg) translateY(20px)}
+.demo-card:hover.demo-card-1{transform:rotate(-8deg) translateY(10px)}
+.demo-card:hover.demo-card-3{transform:rotate(8deg) translateY(10px)}
+.dc-bg{width:100%;height:70%;display:flex;align-items:center;justify-content:center;font-size:64px;position:relative}
+.dc-bg-1{background:linear-gradient(160deg,#2D1B3D,#5C2D8A)}
+.dc-bg-2{background:linear-gradient(160deg,#1B2D3D,#2D5C8A)}
+.dc-bg-3{background:linear-gradient(160deg,#1B3D2D,#2D8A5C)}
+.dc-info{
+  padding:12px 14px;
+  background:linear-gradient(transparent,rgba(8,7,10,.95));
+  position:absolute;bottom:0;left:0;right:0;
+}
+.dc-name{font-family:'Cormorant Garant',serif;font-size:18px;font-weight:700;color:#000000}
+.dc-sub{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px}
+.dc-match{
+  position:absolute;top:-10px;right:-8px;
+  background:var(--gold);color:#000000;
+  font-size:10px;font-weight:700;padding:4px 10px;border-radius:50px;
+  box-shadow:0 4px 12px rgba(0,0,0,.3);
+  animation:pop .4s 1.8s both cubic-bezier(.4,0,.2,1);
+}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+
+/* ─────────────────────────────────────────────
+   TICKER
+───────────────────────────────────────────── */
+.ticker{
+  background:var(--accent);
+  padding:12px 0;overflow:hidden;white-space:nowrap;
+}
+.ticker-track{
+  display:inline-flex;gap:0;
+  animation:tick 20s linear infinite;
+}
+.ticker-track:hover{animation-play-state:paused}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{
+  padding:0 32px;font-size:13px;font-weight:600;
+  color:rgba(255,255,255,.9);letter-spacing:.5px;
+  display:inline-flex;align-items:center;gap:12px;
+}
+.ticker-item::after{content:'✦';opacity:.5}
+
+/* ─────────────────────────────────────────────
+   SECTIONS
+───────────────────────────────────────────── */
+section{padding:100px 48px}
+.s-inner{max-width:1200px;margin:0 auto}
+.s-dark{background:#0A1F6E}
+.s-ink2{background:#FFC200}
+.s-ink3{background:#FFFFFF}
+.s-cream{background:#F8F6F2;color:#000000}
+.s-cream-dk{background:#F0EDE8;color:#000000}
+
+.eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:#0A1F6E;margin-bottom:16px;
+}
+.s-cream .eyebrow,.s-cream-dk .eyebrow{color:#0A1F6E}
+.s-h2{
+  font-family:'Cormorant Garant',serif;
+  font-size:clamp(36px,4vw,60px);
+  font-weight:400;line-height:1.05;
+  margin-bottom:16px;
+  color:#FFFFFF;
+}
+.s-cream .s-h2,.s-cream-dk .s-h2{color:#000000}
+.s-p{
+  font-size:16px;line-height:1.8;color:#333333;
+  max-width:520px;margin-bottom:56px;
+}
+.s-cream .s-p,.s-cream-dk .s-p{color:#5A5060;max-width:520px}
+
+/* ─────────────────────────────────────────────
+   HOW IT WORKS — numbered timeline
+───────────────────────────────────────────── */
+.steps-row{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;position:relative;
+}
+.steps-row::before{
+  content:'';position:absolute;top:28px;left:calc(16.67% + 28px);right:calc(16.67% + 28px);
+  height:2px;background:linear-gradient(90deg,#FFC200,#FFFFFF,#FFC200);
+  z-index:0;
+}
+.step-cell{padding:0 24px;position:relative;z-index:1;text-align:center}
+.step-num{
+  width:56px;height:56px;border-radius:50%;
+  background:#FFC200;border:2px solid #FFC200;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 24px;
+  font-family:'Cormorant Garant',serif;font-size:22px;font-weight:700;color:#000000;
+  transition:all .3s;
+}
+.step-cell:hover .step-num{background:var(--accent);color:#000000;border-color:var(--accent);transform:scale(1.1)}
+.step-title{font-size:17px;font-weight:600;color:#000000;margin-bottom:10px}
+.step-desc{font-size:14px;color:#333333;line-height:1.75}
+
+/* ─────────────────────────────────────────────
+   FEATURE BENTO GRID
+───────────────────────────────────────────── */
+.bento{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:16px;
+}
+.bc{
+  background:#FFFFFF;
+  border:2px solid rgba(0,0,0,.1);
+  border-radius:20px;padding:36px;
+  transition:all .35s;position:relative;overflow:hidden;
+}
+.bc::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(10,31,110,.04),transparent);
+  opacity:0;transition:opacity .35s;
+}
+.bc:hover{border-color:#0A1F6E;transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.15)}
+.bc:hover::before{opacity:1}
+.bc.span2{grid-column:span 2}
+.bc.span3{grid-column:span 3}
+.bc-icon{
+  width:52px;height:52px;border-radius:14px;
+  background:rgba(10,31,110,.08);border:2px solid rgba(10,31,110,.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;margin-bottom:22px;
+}
+.bc-title{font-size:17px;font-weight:600;color:#000000;margin-bottom:10px}
+.bc-desc{font-size:13px;color:#333333;line-height:1.75}
+.bc-badge{
+  display:inline-block;margin-top:16px;
+  padding:4px 12px;border-radius:50px;
+  background:rgba(10,31,110,.08);border:1px solid rgba(10,31,110,.2);
+  font-size:10px;font-weight:700;color:#0A1F6E;letter-spacing:1.5px;text-transform:uppercase;
+}
+
+/* ─────────────────────────────────────────────
+   NCR ZONES
+───────────────────────────────────────────── */
+.zones-grid{
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:40px;
+}
+.zone-tag{
+  padding:10px 22px;border-radius:50px;
+  border:1px solid rgba(255,255,255,.1);
+  font-size:13px;font-weight:500;color:#333333;
+  background:transparent;cursor:pointer;
+  transition:all .22s;
+}
+.zone-tag:hover,.zone-tag.on{
+  background:var(--accent);border-color:var(--accent);
+  color:#000000;
+  box-shadow:0 4px 20px rgba(232,23,58,.35);
+}
+
+/* ─────────────────────────────────────────────
+   TESTIMONIALS
+───────────────────────────────────────────── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tcard{
+  padding:32px;background:#F8F6F2;
+  border:2px solid rgba(0,0,0,.08);
+  border-radius:20px;transition:all .3s;
+}
+.tcard:hover{background:#FFFFFF;transform:translateY(-4px);border-color:#0A1F6E;box-shadow:0 12px 40px rgba(0,0,0,.1)}
+.t-stars{color:#FFC200;font-size:14px;letter-spacing:3px;margin-bottom:18px;-webkit-text-stroke:1px #B8860B}
+.t-q{
+  font-family:'Cormorant Garant',serif;
+  font-style:italic;font-size:18px;color:#000000;
+  line-height:1.55;margin-bottom:22px;
+}
+.t-who{display:flex;align-items:center;gap:12px}
+.t-av{
+  width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0;
+}
+.av-r{background:linear-gradient(135deg,#2D1B3D,#5C2D8A)}
+.av-b{background:linear-gradient(135deg,#1B2D3D,#2D5C8A)}
+.av-g{background:linear-gradient(135deg,#1B3D2D,#2D8A5C)}
+.t-name{font-size:14px;font-weight:600;color:#000000}
+.t-loc{font-size:12px;color:#333333}
+
+/* ─────────────────────────────────────────────
+   PRICING — cream bg for contrast
+───────────────────────────────────────────── */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pcard{
+  padding:36px 28px;border-radius:20px;
+  border:2px solid rgba(0,0,0,.1);
+  background:#FFFFFF;
+  position:relative;transition:all .3s;
+}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.1)}
+.pcard.featured{
+  background:var(--ink);color:#000000;
+  border-color:transparent;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+.featured-tag{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--accent);color:#000000;
+  font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:4px 16px;border-radius:50px;white-space:nowrap;
+}
+.plan-name{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#333333;margin-bottom:12px}
+.pcard.featured .plan-name{color:#333333}
+.plan-price{
+  font-family:'Cormorant Garant',serif;
+  font-size:52px;font-weight:300;color:#000000;line-height:1;margin-bottom:6px;
+}
+.pcard.featured .plan-price{color:#000000}
+.plan-price span{font-size:18px;font-weight:400}
+.plan-cycle{font-size:12px;color:#333333;margin-bottom:28px}
+.plan-features{list-style:none;margin-bottom:32px}
+.plan-features li{
+  font-size:14px;padding:8px 0;
+  border-bottom:1px solid rgba(0,0,0,.06);
+  display:flex;align-items:center;gap:10px;
+  color:#444;
+}
+.pcard.featured .plan-features li{border-bottom-color:rgba(255,255,255,.08);color:#000000}
+.plan-features li::before{content:'✓';color:var(--accent);font-weight:700;font-size:12px}
+.btn-plan{
+  width:100%;padding:14px;border-radius:12px;
+  font-size:14px;font-weight:700;border:none;
+  transition:all .25s;cursor:pointer;
+}
+.btn-plan-out{background:transparent;border:1.5px solid rgba(0,0,0,.15);color:#000000}
+.btn-plan-out:hover{background:#0A1F6E;color:#FFFFFF}
+.btn-plan-fill{background:var(--accent);color:#000000;box-shadow:0 4px 20px rgba(232,23,58,.4)}
+.btn-plan-fill:hover{background:#FFD000;transform:translateY(-1px)}
+
+/* ─────────────────────────────────────────────
+   APP DOWNLOAD
+───────────────────────────────────────────── */
+.app-sec-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.app-big-btns{display:flex;flex-direction:column;gap:14px;margin-top:32px}
+.app-big-btn{
+  display:flex;align-items:center;gap:16px;
+  padding:18px 24px;border-radius:16px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  color:#000000;transition:all .25s;
+}
+.app-big-btn:hover{background:#FFC200;border-color:#FFC200;color:#000000;transform:translateX(6px)}
+.ab-ico{font-size:26px}
+.ab-txt span{display:block;font-size:10px;color:#333333;letter-spacing:1px;text-transform:uppercase}
+.ab-txt strong{font-size:18px;font-weight:700}
+
+.qr-showcase{
+  display:flex;flex-direction:column;align-items:center;gap:18px;
+  padding:44px;background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);border-radius:24px;
+}
+.qr-lg{
+  width:150px;height:150px;background:var(--white);
+  border-radius:14px;padding:12px;
+  display:grid;grid-template-columns:repeat(7,1fr);gap:2px;
+}
+.qr-lg b{border-radius:2px;background:var(--ink);display:block}
+.qr-lg b.w{background:transparent}
+.qr-lbl{text-align:center;color:#333333;font-size:13px;line-height:1.6}
+.qr-lbl strong{display:block;color:#000000;margin-bottom:4px}
+
+/* ─────────────────────────────────────────────
+   IDEAS
+───────────────────────────────────────────── */
+.ideas-inner{max-width:640px;margin:0 auto;text-align:center}
+.idea-form{
+  display:flex;flex-direction:column;gap:14px;
+  margin-top:40px;text-align:left;
+}
+.if-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ifield{
+  padding:14px 18px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:12px;font-size:15px;color:#000000;
+  outline:none;font-family:'DM Sans',sans-serif;transition:border-color .2s;
+}
+.ifield:focus{border-color:#0A1F6E;background:#FFFFFF;}
+.ifield::placeholder{color:rgba(0,0,0,.35)}
+textarea.ifield{min-height:120px;resize:vertical}
+.idea-submit{
+  align-self:center;padding:14px 40px;
+  background:var(--accent);color:#000000;
+  font-size:15px;font-weight:600;border:none;
+  border-radius:50px;transition:all .25s;
+  box-shadow:0 4px 20px rgba(232,23,58,.35);
+}
+.idea-submit:hover{background:#061550;transform:translateY(-2px);box-shadow:0 8px 28px rgba(10,31,110,.5)}
+
+/* ─────────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────────── */
+footer{
+  background:var(--ink);padding:56px 48px 36px;
+  border-top:1px solid rgba(255,255,255,.2);
+}
+.ft-grid{
+  max-width:1200px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:flex-start;
+  padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.15);
+  margin-bottom:28px;flex-wrap:wrap;gap:28px;
+}
+.ft-brand-n{
+  font-family:'Cormorant Garant',serif;
+  font-size:28px;font-weight:600;letter-spacing:5px;color:#000000;
+}
+.ft-brand-s{font-size:10px;color:rgba(255,255,255,.6);letter-spacing:3px;margin-top:4px;text-transform:uppercase}
+.ft-links{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.ft-links a{color:#333333;font-size:13px;transition:color .2s}
+.ft-links a:hover{color:#000000}
+.ft-copy{
+  max-width:1200px;margin:0 auto;
+  font-size:12px;color:rgba(255,255,255,.25);
+}
+
+/* ─────────────────────────────────────────────
+   MODAL
+───────────────────────────────────────────── */
+.modal-bg{
+  position:fixed;inset:0;z-index:1100;
+  background:rgba(8,7,10,.8);backdrop-filter:blur(14px);
+  display:none;align-items:center;justify-content:center;
+  padding:24px;
+}
+.modal-bg.show{display:flex}
+.modal-box{
+  background:var(--ink-2);border:1px solid rgba(255,255,255,.1);
+  border-radius:28px;padding:44px;max-width:420px;width:100%;
+  position:relative;animation:mPop .35s cubic-bezier(.4,0,.2,1);
+}
+@keyframes mPop{from{opacity:0;transform:scale(.96) translateY(16px)}to{opacity:1;transform:none}}
+.modal-x{
+  position:absolute;top:18px;right:22px;background:none;border:none;
+  font-size:20px;color:#333333;transition:color .2s;
+}
+.modal-x:hover{color:#000000}
+.modal-h{
+  font-family:'Cormorant Garant',serif;
+  font-size:30px;font-weight:400;color:#000000;margin-bottom:6px;
+}
+.modal-sub{font-size:14px;color:#333333;margin-bottom:28px}
+.m-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#333333;margin-bottom:10px}
+.m-ph-row{
+  display:flex;gap:8px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;padding:6px;margin-bottom:12px;
+}
+.m-flag{
+  display:flex;align-items:center;gap:5px;
+  background:rgba(255,255,255,.08);border:none;
+  border-radius:10px;padding:10px 12px;
+  font-size:14px;font-weight:600;color:#000000;
+}
+.m-in{
+  flex:1;background:transparent;border:none;
+  font-size:16px;color:#000000;padding:10px 6px;
+  outline:none;font-family:'DM Sans',sans-serif;
+}
+.m-in::placeholder{color:rgba(255,255,255,.3)}
+.m-btn{
+  width:100%;padding:15px;border:none;border-radius:12px;
+  font-size:15px;font-weight:700;color:#000000;
+  background:var(--accent);
+  box-shadow:0 4px 20px rgba(232,23,58,.4);
+  margin-bottom:14px;transition:all .25s;
+}
+.m-btn:hover{background:var(--accent-lt);transform:translateY(-1px)}
+.m-or{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.2);font-size:11px;margin-bottom:12px}
+.m-or::before,.m-or::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.08)}
+.m-soc{
+  width:100%;padding:12px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);border-radius:12px;
+  color:#000000;font-size:14px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  margin-bottom:8px;transition:all .2s;
+}
+.m-soc:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#000000}
+.otp-boxes{display:flex;gap:8px;justify-content:center;margin:20px 0}
+.otp-b{
+  width:50px;height:58px;text-align:center;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;font-size:26px;font-weight:700;color:#000000;
+  outline:none;transition:border-color .2s;font-family:'DM Sans',sans-serif;
+}
+.otp-b:focus{border-color:var(--accent)}
+
+/* ─────────────────────────────────────────────
+   CHATBOT
+───────────────────────────────────────────── */
+.chat-fab{
+  position:fixed;bottom:28px;right:28px;z-index:800;
+  width:60px;height:60px;border-radius:50%;border:none;
+  background:linear-gradient(135deg,var(--accent-dk),var(--accent));
+  color:#000000;font-size:24px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 30px rgba(232,23,58,.5);
+  transition:all .3s;cursor:pointer;
+}
+.chat-fab:hover{transform:scale(1.1) rotate(-5deg);box-shadow:0 12px 40px rgba(232,23,58,.65)}
+.chat-badge{
+  position:absolute;top:-4px;right:-4px;
+  width:18px;height:18px;border-radius:50%;
+  background:#22c55e;color:#000000;
+  font-size:10px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  border:2px solid var(--ink);
+}
+.chat-win{
+  position:fixed;bottom:104px;right:28px;z-index:800;
+  width:360px;background:var(--ink-2);border-radius:22px;
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 28px 70px rgba(0,0,0,.4);
+  display:flex;flex-direction:column;overflow:hidden;
+  opacity:0;pointer-events:none;
+  transform:translateY(20px) scale(.96);
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+}
+.chat-win.open{opacity:1;pointer-events:all;transform:none}
+.chat-hdr{
+  padding:16px 20px;
+  background:linear-gradient(135deg,var(--accent-dk),var(--accent));
+  display:flex;align-items:center;gap:12px;color:#000000;
+}
+.chat-av{
+  width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+}
+.chat-hdr-n{font-weight:700;font-size:15px}
+.chat-hdr-s{font-size:12px;opacity:.8;display:flex;align-items:center;gap:5px}
+.s-dot{width:6px;height:6px;border-radius:50%;background:#4ade80}
+.chat-cl{background:none;border:none;color:rgba(255,255,255,.6);font-size:18px;cursor:pointer;margin-left:auto}
+.chat-cl:hover{color:#000000}
+.chat-msgs{
+  height:300px;overflow-y:auto;padding:16px;
+  display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth;
+}
+.chat-msgs::-webkit-scrollbar{width:3px}
+.chat-msgs::-webkit-scrollbar-thumb{background:var(--smoke);border-radius:4px}
+.cm{max-width:84%;display:flex;flex-direction:column;gap:4px}
+.cm.bot{align-self:flex-start}
+.cm.usr{align-self:flex-end}
+.cb{padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.55}
+.bot .cb{background:var(--ink-3);color:#000000;border-bottom-left-radius:4px}
+.usr .cb{background:var(--accent);color:#000000;border-bottom-right-radius:4px}
+.ct{font-size:10px;color:var(--smoke)}
+.bot .ct{text-align:left}
+.usr .ct{text-align:right}
+.qk-reps{display:flex;flex-wrap:wrap;gap:6px;padding:4px 16px 10px}
+.qk{
+  padding:6px 13px;border-radius:50px;
+  border:1px solid rgba(232,23,58,.4);color:var(--accent);
+  font-size:12px;font-weight:600;cursor:pointer;background:transparent;
+  transition:all .2s;font-family:'DM Sans',sans-serif;
+}
+.qk:hover{background:var(--accent);color:#000000;border-color:var(--accent)}
+.chat-in-row{
+  padding:12px 14px;border-top:1px solid rgba(255,255,255,.2);
+  display:flex;gap:8px;
+}
+.chat-inp{
+  flex:1;padding:9px 14px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);border-radius:50px;
+  font-size:14px;color:#000000;outline:none;font-family:'DM Sans',sans-serif;
+  transition:border-color .2s;
+}
+.chat-inp:focus{border-color:rgba(232,23,58,.4)}
+.chat-inp::placeholder{color:rgba(255,255,255,.25)}
+.chat-snd{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--accent);color:#000000;border:none;
+  font-size:15px;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .2s;flex-shrink:0;
+}
+.chat-snd:hover{background:var(--accent-lt);transform:scale(1.08)}
+.tdots{display:flex;gap:4px;align-items:center;padding:10px 14px}
+.tdots span{width:6px;height:6px;border-radius:50%;background:var(--smoke);animation:td 1.2s infinite}
+.tdots span:nth-child(2){animation-delay:.2s}
+.tdots span:nth-child(3){animation-delay:.4s}
+@keyframes td{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────── */
+@media(max-width:960px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  section{padding:60px 24px}
+  .steps-row,.bento,.testi-grid,.price-grid,.app-sec-grid{grid-template-columns:1fr}
+  .steps-row::before{display:none}
+  .bc.span2,.bc.span3{grid-column:auto}
+  .if-row{grid-template-columns:1fr}
+  footer{padding:44px 24px 28px}
+  .swipe-demo{gap:8px}
+  .demo-card{width:130px;height:200px}
+  .chat-win{width:calc(100vw - 40px);right:20px}
+  #cookie{max-width:calc(100vw - 32px);left:16px;flex-direction:column}
+}
+
+/* ── GLOW WHITE TEXT ── */
+.s-dark .s-h2,
+.s-dark .eyebrow,
+.s-dark .s-p,
+.s-dark .step-title,
+.s-dark .step-desc,
+.s-dark .zone-tag,
+.s-dark .ab-txt strong,
+.s-dark .ab-txt span,
+.s-dark .qr-lbl,
+.s-dark .qr-lbl strong {
+  text-shadow: 0 0 20px rgba(255,255,255,0.4), 0 0 40px rgba(255,255,255,0.15);
+}
+.s-dark h2 {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 30px rgba(255,255,255,0.5), 0 0 60px rgba(255,255,255,0.2), 0 0 100px rgba(255,194,0,0.15) !important;
+}
+.s-dark p, .s-dark .s-p {
+  color: rgba(255,255,255,0.9) !important;
+  text-shadow: 0 0 15px rgba(255,255,255,0.3) !important;
+}
+.s-dark .eyebrow {
+  color: #FFC200 !important;
+  text-shadow: 0 0 20px rgba(255,194,0,0.8), 0 0 40px rgba(255,194,0,0.4) !important;
+}
+.step-title {
+  text-shadow: 0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(255,255,255,0.2) !important;
+}
+.step-desc {
+  color: rgba(255,255,255,0.9) !important;
+  text-shadow: 0 0 12px rgba(255,255,255,0.25) !important;
+}
+/* Zone tags glow */
+.zone-tag {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 10px rgba(255,255,255,0.4) !important;
+}
+.zone-tag:hover, .zone-tag.on {
+  color: #000000 !important;
+  text-shadow: none !important;
+}
+/* App section glow */
+.app-sec-grid .s-h2 {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 30px rgba(255,255,255,0.5), 0 0 60px rgba(255,255,255,0.2) !important;
+}
+.app-sec-grid .s-p {
+  color: rgba(255,255,255,0.85) !important;
+  text-shadow: 0 0 15px rgba(255,255,255,0.3) !important;
+}
+.ab-txt strong {
+  text-shadow: 0 0 15px rgba(255,255,255,0.4) !important;
+}
+.qr-lbl strong {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 20px rgba(255,255,255,0.5) !important;
+}
+.qr-lbl {
+  color: rgba(255,255,255,0.8) !important;
+  text-shadow: 0 0 10px rgba(255,255,255,0.3) !important;
+}
+/* Footer glow */
+.ft-brand-n {
+  text-shadow: 0 0 30px rgba(255,194,0,0.8), 0 0 60px rgba(255,194,0,0.4) !important;
+}
+.ft-links a {
+  text-shadow: 0 0 8px rgba(255,255,255,0.2) !important;
+}
+.ft-links a:hover {
+  color: #FFC200 !important;
+  text-shadow: 0 0 15px rgba(255,194,0,0.7) !important;
+}
+.ft-copy {
+  text-shadow: 0 0 8px rgba(255,255,255,0.15) !important;
+}
+/* How it works step numbers glow */
+.step-num {
+  box-shadow: 0 0 20px rgba(255,194,0,0.6), 0 0 40px rgba(255,194,0,0.3) !important;
+}
+/* Steps connecting line glow */
+.steps-row::before {
+  box-shadow: 0 0 8px rgba(255,194,0,0.6), 0 0 20px rgba(255,194,0,0.3) !important;
+}
+
+</style>
+</head>
+<body>
+
+<!-- COOKIE -->
+<div id="cookie">
+  <div class="cookie-text">
+    🔒 <strong>We value your privacy deeply.</strong><br>
+    RUBAROO uses cookies to personalise your experience, power our matching engine, and keep you safe. We never sell your data.
+    <a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#">Privacy Policy</a> · <a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#">Cookie Policy</a> · <a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#">Terms</a>
+  </div>
+  <div class="cookie-btns">
+    <button class="ck-acc" onclick="document.getElementById(&#39;cookie&#39;).remove()">Accept All</button>
+    <button class="ck-mng" onclick="document.getElementById(&#39;cookie&#39;).remove()">Manage</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-brand" href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#">
+    <span class="nav-brand-en"><span style="color:#7B2FBE">R</span>UBAROO</span>
+    <span class="nav-brand-hi"><span style="color:#7B2FBE">रू</span>बरू</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#how">How it Works</a></li>
+    <li><a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#features">Features</a></li>
+    <li><a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#zones">NCR Zones</a></li>
+    <li><a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#pricing">Pricing</a></li>
+    <li><a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#app">Get App</a></li>
+    <li><a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#ideas">Ideas</a></li>
+  </ul>
+  <div class="nav-cta">
+    <button class="n-ghost" onclick="openModal(&#39;login&#39;)">Sign In</button>
+    <button class="n-solid" onclick="openModal(&#39;reg&#39;)">Be Rubaroo ♥</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ambient">
+    <div class="amb-1"></div>
+    <div class="amb-2"></div>
+    <div class="amb-3"></div>
+  </div>
+  <div class="hero-grid"></div>
+  <canvas id="hbCanvas" width="1528" height="120"></canvas>
+
+  <div class="hero-content">
+    <div class="hero-pill">
+      <div class="pill-dot"></div>
+      <span class="pill-text">Delhi NCR's Premium Dating Platform</span>
+    </div>
+
+    <h1 class="hero-h1">
+      <strong>Your City.</strong>
+      <em>Your Person.</em>
+    </h1>
+    <p class="hero-tagline">Delhi NCR · Verified · Real · Meaningful</p>
+
+    <div class="hero-login">
+      
+
+      <div class="phone-wrap">
+        <button class="ph-flag">🇮🇳 +91</button>
+        <input class="ph-in" type="tel" id="hp" placeholder="Mobile number" maxlength="10">
+        <button class="ph-go" onclick="handleOtp()">Send OTP →</button>
+      </div>
+
+      <div class="div-or">or continue with</div>
+
+      <div class="soc-row">
+        <button class="soc-btn" onclick="openModal(&#39;reg&#39;)">
+          <div class="g-circle"></div> Google
+        </button>
+        <button class="soc-btn" onclick="openModal(&#39;login&#39;)">✉ Email</button>
+        <button class="soc-btn" onclick="openModal(&#39;reg&#39;)"> Apple</button>
+      </div>
+
+      <div class="app-row">
+        <a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#" class="app-btn">
+          <span class="app-ico">🍎</span>
+          <div class="app-txt-sm"><span>Download on</span><strong>App Store</strong></div>
+        </a>
+        <a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#" class="app-btn">
+          <span class="app-ico">▶</span>
+          <div class="app-txt-sm"><span>Get it on</span><strong>Google Play</strong></div>
+        </a>
+        <div class="qr-wrap">
+          <div class="qr-tiny">
+            <b></b><b></b><b></b><b class="w"></b><b></b>
+            <b></b><b class="w"></b><b></b><b></b><b></b>
+            <b></b><b></b><b class="w"></b><b></b><b></b>
+            <b class="w"></b><b></b><b></b><b class="w"></b><b></b>
+            <b></b><b class="w"></b><b></b><b></b><b></b>
+          </div>
+          <span class="qr-wrap-lbl">Scan QR</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile card demo -->
+    <div class="swipe-demo">
+      <div class="demo-card demo-card-1">
+        <div class="dc-bg dc-bg-1">🧑</div>
+        <div class="dc-info">
+          <div class="dc-name">Arjun, 29</div>
+          <div class="dc-sub">📍 Gurgaon · Engineer</div>
+        </div>
+      </div>
+      <div class="demo-card demo-card-2">
+        <div class="dc-match">❤ 97% Match</div>
+        <div class="dc-bg dc-bg-2">👩</div>
+        <div class="dc-info">
+          <div class="dc-name">Priya, 26</div>
+          <div class="dc-sub">📍 South Delhi · Designer</div>
+        </div>
+      </div>
+      <div class="demo-card demo-card-3">
+        <div class="dc-bg dc-bg-3">👩‍🦱</div>
+        <div class="dc-info">
+          <div class="dc-name">Sneha, 27</div>
+          <div class="dc-sub">📍 Noida · Doctor</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">2.4 Lakh+ Active Users</span>
+    <span class="ticker-item">18,000+ Matches Made</span>
+    <span class="ticker-item">4.8 ★ App Rating</span>
+    <span class="ticker-item">100% Verified Profiles</span>
+    <span class="ticker-item">Delhi NCR Only</span>
+    <span class="ticker-item">Free to Join</span>
+    <span class="ticker-item">Zero Fake Profiles</span>
+    <span class="ticker-item">AI-Powered Matching</span>
+    <span class="ticker-item">2.4 Lakh+ Active Users</span>
+    <span class="ticker-item">18,000+ Matches Made</span>
+    <span class="ticker-item">4.8 ★ App Rating</span>
+    <span class="ticker-item">100% Verified Profiles</span>
+    <span class="ticker-item">Delhi NCR Only</span>
+    <span class="ticker-item">Free to Join</span>
+    <span class="ticker-item">Zero Fake Profiles</span>
+    <span class="ticker-item">AI-Powered Matching</span>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="s-dark" id="how">
+  <div class="s-inner">
+    <div class="eyebrow reveal">How It Works</div>
+    <h2 class="s-h2 reveal">Three steps to your person</h2>
+    <p class="s-p reveal">No endless swiping. No fake accounts. Just real people in your city, matched by design.</p>
+    <div class="steps-row reveal">
+      <div class="step-cell">
+        <div class="step-num">1</div>
+        <div class="step-title">Build Your Profile</div>
+        <div class="step-desc">Sign up via mobile OTP. Add photos, answer personality prompts, choose your NCR zone. Under 3 minutes.</div>
+      </div>
+      <div class="step-cell">
+        <div class="step-num">2</div>
+        <div class="step-title">Get Smart Matches</div>
+        <div class="step-desc">Our AI reads personality, values, interests and proximity — not just appearance. Fewer but far better matches.</div>
+      </div>
+      <div class="step-cell">
+        <div class="step-num">3</div>
+        <div class="step-title">Connect Meaningfully</div>
+        <div class="step-desc">Chat, voice note, video call — all inside RUBAROO. Your number stays private until you decide otherwise.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES BENTO -->
+<section class="s-ink2" id="features" style="color:#000000">
+  <div class="s-inner">
+    <div class="eyebrow reveal">Why RUBAROO</div>
+    <h2 class="s-h2 reveal">Built different, for India</h2>
+    <p class="s-p reveal">Every feature designed around how real people build relationships in Delhi NCR.</p>
+    <div class="bento reveal">
+      <div class="bc span2">
+        <div class="bc-icon">🛡️</div>
+        <div class="bc-title">Every Profile is Verified — Guaranteed</div>
+        <div class="bc-desc">Phone OTP on signup. Optional Aadhaar verification for a trust badge. Our moderation team reviews every profile within 24 hours. Zero tolerance for fake accounts — we remove them instantly. This is a promise, not a marketing line.</div>
+        <span class="bc-badge">Trust First</span>
+      </div>
+      <div class="bc">
+        <div class="bc-icon">🤖</div>
+        <div class="bc-title">AI Compatibility Engine</div>
+        <div class="bc-desc">Matches based on personality type, communication style, values, and lifestyle — not just profile photos. Gets smarter the more you use it.</div>
+        <span class="bc-badge">Smart Matching</span>
+      </div>
+      <div class="bc">
+        <div class="bc-icon">🗺️</div>
+        <div class="bc-title">Hyperlocal NCR Zones</div>
+        <div class="bc-desc">Filter matches by exact zones — South Delhi, Gurgaon, Noida, and 12 more. Meet people who actually live near you.</div>
+        <span class="bc-badge">Hyperlocal</span>
+      </div>
+      <div class="bc">
+        <div class="bc-icon">💬</div>
+        <div class="bc-title">Private Chat &amp; Video</div>
+        <div class="bc-desc">Text, voice notes, and video — all inside RUBAROO. Your number stays hidden until you're ready to share it.</div>
+        <span class="bc-badge">Privacy First</span>
+      </div>
+      <div class="bc span2">
+        <div class="bc-icon">💎</div>
+        <div class="bc-title">Free to Start — No Hidden Costs Ever</div>
+        <div class="bc-desc">Create a complete profile, browse matches, and start conversations — completely free. Upgrade to Plus or Gold when you want more visibility, unlimited likes, and premium features. Every price is transparent, every plan is cancellable anytime.</div>
+        <span class="bc-badge">Transparent Pricing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NCR ZONES -->
+<section class="s-dark" id="zones">
+  <div class="s-inner">
+    <div class="eyebrow reveal">Coverage</div>
+    <h2 class="s-h2 reveal">Every corner of Delhi NCR</h2>
+    <p class="s-p reveal">Pick your zone and connect with people who actually live near you.</p>
+    <div class="zones-grid reveal">
+      <button class="zone-tag on">South Delhi</button>
+      <button class="zone-tag">North Delhi</button>
+      <button class="zone-tag">East Delhi</button>
+      <button class="zone-tag">West Delhi</button>
+      <button class="zone-tag">Gurgaon</button>
+      <button class="zone-tag">Noida</button>
+      <button class="zone-tag">Greater Noida</button>
+      <button class="zone-tag">Dwarka</button>
+      <button class="zone-tag">Faridabad</button>
+      <button class="zone-tag">Ghaziabad</button>
+      <button class="zone-tag">Rohini</button>
+      <button class="zone-tag">Saket</button>
+      <button class="zone-tag">Lajpat Nagar</button>
+      <button class="zone-tag">Vasant Kunj</button>
+      <button class="zone-tag">Connaught Place</button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="s-ink3">
+  <div class="s-inner">
+    <div class="eyebrow reveal">Success Stories</div>
+    <h2 class="s-h2 reveal">Real people. Real connections.</h2>
+    <p class="s-p reveal">Over 18,000 matches made across Delhi NCR.</p>
+    <div class="testi-grid reveal">
+      <div class="tcard">
+        <div class="t-stars">★★★★★</div>
+        <div class="t-q">"Found my partner in 3 weeks. The NCR zone filter is genius — she lives 10 minutes from me in Saket."</div>
+        <div class="t-who">
+          <div class="t-av av-r">👨</div>
+          <div><div class="t-name">Rahul S., 31</div><div class="t-loc">South Delhi</div></div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="t-stars">★★★★★</div>
+        <div class="t-q">"Every profile is verified. I felt safe from day one. Met someone wonderful in Gurgaon within a month."</div>
+        <div class="t-who">
+          <div class="t-av av-b">👩</div>
+          <div><div class="t-name">Divya M., 28</div><div class="t-loc">Gurgaon</div></div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="t-stars">★★★★★</div>
+        <div class="t-q">"The AI matching is actually intelligent. My match was 97% and he is perfect. Getting married in December!"</div>
+        <div class="t-who">
+          <div class="t-av av-g">👩</div>
+          <div><div class="t-name">Neha K., 27</div><div class="t-loc">Noida</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="s-cream" id="pricing">
+  <div class="s-inner">
+    <div class="eyebrow reveal">Pricing</div>
+    <h2 class="s-h2 reveal">Simple, honest pricing</h2>
+    <p class="s-p reveal">Start free. Upgrade only when you want more. Cancel anytime. No dark patterns.</p>
+    <div class="price-grid reveal">
+      <div class="pcard">
+        <div class="plan-name">Free</div>
+        <div class="plan-price"><span>₹</span>0</div>
+        <div class="plan-cycle">Forever free</div>
+        <ul class="plan-features">
+          <li>Create full profile</li>
+          <li>5 matches per day</li>
+          <li>In-app chat</li>
+          <li>NCR zone filter</li>
+          <li>Basic profile visibility</li>
+        </ul>
+        <button class="btn-plan btn-plan-out" onclick="openModal(&#39;reg&#39;)">Get Started</button>
+      </div>
+      <div class="pcard featured">
+        <div class="featured-tag">Most Popular</div>
+        <div class="plan-name">Plus</div>
+        <div class="plan-price"><span>₹</span>299</div>
+        <div class="plan-cycle">per month</div>
+        <ul class="plan-features">
+          <li>Unlimited likes</li>
+          <li>See who liked you</li>
+          <li>Priority visibility</li>
+          <li>Advanced filters</li>
+          <li>Voice &amp; video calls</li>
+          <li>Read receipts</li>
+        </ul>
+        <button class="btn-plan btn-plan-fill" onclick="openModal(&#39;reg&#39;)">Start with Plus</button>
+      </div>
+      <div class="pcard">
+        <div class="plan-name">Gold</div>
+        <div class="plan-price"><span>₹</span>499</div>
+        <div class="plan-cycle">per month</div>
+        <ul class="plan-features">
+          <li>Everything in Plus</li>
+          <li>Top placement daily</li>
+          <li>Gold verified badge</li>
+          <li>Undo last pass</li>
+          <li>Incognito mode</li>
+          <li>Priority support</li>
+        </ul>
+        <button class="btn-plan btn-plan-out" onclick="openModal(&#39;reg&#39;)">Go Gold</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APP DOWNLOAD -->
+<section class="s-dark" id="app">
+  <div class="s-inner">
+    <div class="app-sec-grid reveal">
+      <div>
+        <div class="eyebrow">Download</div>
+        <h2 class="s-h2">RUBAROO in your pocket</h2>
+        <p class="s-p">Find your person anytime. Available on iOS and Android.</p>
+        <div class="app-big-btns">
+          <a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#" class="app-big-btn">
+            <span class="ab-ico">🍎</span>
+            <div class="ab-txt"><span>Download on the</span><strong>App Store</strong></div>
+          </a>
+          <a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#" class="app-big-btn">
+            <span class="ab-ico">▶</span>
+            <div class="ab-txt"><span>Get it on</span><strong>Google Play</strong></div>
+          </a>
+        </div>
+      </div>
+      <div class="qr-showcase">
+        <div class="qr-lg">
+          <b></b><b></b><b></b><b class="w"></b><b></b><b class="w"></b><b></b>
+          <b></b><b class="w"></b><b></b><b></b><b class="w"></b><b></b><b></b>
+          <b></b><b></b><b class="w"></b><b></b><b></b><b></b><b class="w"></b>
+          <b class="w"></b><b></b><b></b><b class="w"></b><b></b><b></b><b></b>
+          <b></b><b class="w"></b><b></b><b></b><b class="w"></b><b class="w"></b><b></b>
+          <b></b><b></b><b class="w"></b><b></b><b></b><b class="w"></b><b></b>
+          <b></b><b class="w"></b><b></b><b></b><b></b><b></b><b class="w"></b>
+        </div>
+        <div class="qr-lbl">
+          <strong>Scan QR Code</strong>
+          Point your camera here to download the app instantly
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHARE IDEAS -->
+<section class="s-ink2" id="ideas">
+  <div class="s-inner">
+    <div class="ideas-inner reveal">
+      <div class="eyebrow">Community</div>
+      <h2 class="s-h2">Share Your Ideas</h2>
+      <p class="s-p" style="max-width:100%">RUBAROO is built by the community. Tell us what features you want next — we read every single message.</p>
+      <div class="idea-form">
+        <div class="if-row">
+          <input class="ifield" type="text" placeholder="Your name (optional)">
+          <input class="ifield" type="email" placeholder="Email (we&#39;ll reply)">
+        </div>
+        <textarea class="ifield" placeholder="Your idea...
+
+e.g. &quot;Voice bio feature&quot;, &quot;Horoscope compatibility&quot;, &quot;Group events in Delhi&quot;..."></textarea>
+        <button class="idea-submit">Submit Idea →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div>
+      <div class="ft-brand-n">RUBAROO</div>
+      <div class="ft-brand-s">रूबरू · Made with ♥ in Delhi NCR</div>
+    </div>
+    <div class="ft-links">
+      <a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#">Privacy Policy</a>
+      <a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#">Terms of Use</a>
+      <a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#">Cookie Policy</a>
+      <a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#">Safety</a>
+      <a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#">Contact</a>
+      <a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#">Careers</a>
+      <a href="file:///C:/Users/MEENAKSHI/Downloads/index_2.html#">Blog</a>
+    </div>
+  </div>
+  <div class="ft-copy">© 2026 RUBAROO. All rights reserved.</div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal-box">
+    <button class="modal-x" onclick="closeModal()">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- CHATBOT -->
+<button class="chat-fab" id="chatFab" onclick="toggleChat()">
+  💬
+  <div class="chat-badge" id="chatBadge">1</div>
+</button>
+<div class="chat-win" id="chatWin">
+  <div class="chat-hdr">
+    <div class="chat-av">🤖</div>
+    <div>
+      <div class="chat-hdr-n">Rubaroo Assistant</div>
+      <div class="chat-hdr-s"><div class="s-dot"></div> Online · here to help</div>
+    </div>
+    <button class="chat-cl" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs"></div>
+  <div class="qk-reps" id="qkReps">
+    <button class="qk" onclick="qs(&#39;How do I sign up?&#39;)">How to sign up?</button>
+    <button class="qk" onclick="qs(&#39;Is it free?&#39;)">Is it free?</button>
+    <button class="qk" onclick="qs(&#39;Is my data safe?&#39;)">Data safety?</button>
+    <button class="qk" onclick="qs(&#39;How does matching work?&#39;)">Matching?</button>
+    <button class="qk" onclick="qs(&#39;What are the plans?&#39;)">Plans &amp; pricing?</button>
+  </div>
+  <div class="chat-in-row">
+    <input class="chat-inp" id="chatInp" placeholder="Ask anything..." onkeydown="if(event.key===&#39;Enter&#39;)sendC()">
+    <button class="chat-snd" onclick="sendC()">➤</button>
+  </div>
+</div>
+
+<script>
+/* ─── NAV SCROLL ─── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)
+})
+
+/* ─── HEARTBEAT CANVAS ─── */
+;(function(){
+  const c=document.getElementById('hbCanvas')
+  const ctx=c.getContext('2d')
+  let w,animated=false
+  function resize(){c.width=w=window.innerWidth;c.height=120}
+  resize();window.addEventListener('resize',resize)
+
+  let prog=0
+  const pts=[
+    [0,.5],[.05,.5],[.1,.5],[.12,.2],[.14,.8],[.16,.2],[.18,.5],
+    [.22,.5],[.3,.5],[.32,.15],[.34,.85],[.36,.15],[.38,.5],
+    [.42,.5],[.5,.5],[.52,.2],[.54,.8],[.56,.2],[.58,.5],
+    [.62,.5],[.7,.5],[.72,.1],[.74,.9],[.76,.1],[.78,.5],
+    [.82,.5],[1,.5]
+  ]
+
+  function getY(x){
+    for(let i=0;i<pts.length-1;i++){
+      if(x>=pts[i][0]&&x<=pts[i+1][0]){
+        const t=(x-pts[i][0])/(pts[i+1][0]-pts[i][0])
+        return pts[i][1]+(pts[i+1][1]-pts[i][1])*t
+      }
+    }
+    return .5
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,w,120)
+    const total=pts[pts.length-1][0]
+    const drawn=prog*total
+    ctx.beginPath()
+    let started=false
+    for(let px=0;px<=w;px+=2){
+      const nx=px/w
+      if(nx>drawn)break
+      const y=getY(nx)*120
+      if(!started){ctx.moveTo(px,y);started=true}
+      else ctx.lineTo(px,y)
+    }
+    ctx.strokeStyle='rgba(139,0,0,0.7)'
+    ctx.lineWidth=2
+    ctx.shadowColor='rgba(139,0,0,0.4)'
+    ctx.shadowBlur=8
+    ctx.stroke()
+    if(prog<1){prog+=.003;requestAnimationFrame(draw)}
+    else{
+      setTimeout(()=>{prog=0;draw()},2000)
+    }
+  }
+
+  const obs=new IntersectionObserver(e=>{if(e[0].isIntersecting&&!animated){animated=true;draw()}},{threshold:.1})
+  obs.observe(c)
+})()
+
+/* ─── SCROLL REVEAL ─── */
+;(function(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})
+  },{threshold:.1})
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))
+})()
+
+/* ─── ZONES ─── */
+document.querySelectorAll('.zone-tag').forEach(z=>z.addEventListener('click',()=>{
+  document.querySelectorAll('.zone-tag').forEach(x=>x.classList.remove('on'))
+  z.classList.add('on')
+}))
+
+/* ─── CONFIG ─── */
+const API_BASE='https://rubaroo-production-dfa1.up.railway.app'
+
+/* ─── OTP ─── */
+async function handleOtp(){
+  const p=document.getElementById('hp').value.trim()
+  if(p.length<10){alert('Please enter a valid 10-digit mobile number.');return}
+  await sendOtp(p)
+}
+
+async function sendOtp(phone){
+  try{
+    const res=await fetch(`${API_BASE}/api/auth/send-otp`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({phone:phone})
+    })
+    const data=await res.json()
+    if(res.ok){
+      openModal('otp',phone)
+    } else {
+      alert(data.message||'Failed to send OTP. Please try again.')
+    }
+  } catch(err){
+    alert('Network error. Please check your connection.')
+    console.error(err)
+  }
+}
+
+/* ─── MODAL ─── */
+function openModal(type,data){
+  document.getElementById('modalBg').classList.add('show')
+  const b=document.getElementById('modalBody')
+  if(type==='login'){
+    b.innerHTML=`
+      <div class="modal-h">Welcome back ♥</div>
+      <div class="modal-sub">Sign in to continue your journey</div>
+      <div class="m-label">Mobile number</div>
+      <div class="m-ph-row">
+        <button class="m-flag">🇮🇳 +91</button>
+        <input class="m-in" id="mp" type="tel" placeholder="Enter number" maxlength="10">
+      </div>
+      <button class="m-btn" onclick="sendOtp(document.getElementById('mp').value)">Send OTP →</button>
+      <div class="m-or">or</div>
+      <button class="m-soc"><div class="g-circle"></div>&nbsp; Continue with Google</button>
+      <button class="m-soc" style="margin-top:8px">✉ &nbsp;Sign in with Email</button>
+      <p style="text-align:center;margin-top:20px;font-size:13px;color:#333333">
+        New here? <a onclick="window.location.href='/register'" style="color:var(--accent);cursor:pointer;font-weight:600">Create account →</a>
+      </p>`
+  } else if(type==='reg'){
+    b.innerHTML=`
+      <div class="modal-h">Be Rubaroo ♥</div>
+      <div class="modal-sub">Join Delhi NCR's premium dating platform</div>
+      <input class="m-in" style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:13px 16px;margin-bottom:12px;color:#000000" placeholder="Your full name" type="text">
+      <div class="m-label">Mobile number</div>
+      <div class="m-ph-row">
+        <button class="m-flag">🇮🇳 +91</button>
+        <input class="m-in" id="rp" type="tel" placeholder="Enter number" maxlength="10">
+      </div>
+      <button class="m-btn" onclick="sendOtp(document.getElementById('rp').value)">Create Account — Send OTP →</button>
+      <div class="m-or">or</div>
+      <button class="m-soc"><div class="g-circle"></div>&nbsp; Register with Google</button>
+      <p style="text-align:center;margin-top:16px;font-size:12px;color:#333333">
+        By registering you agree to our <a href="#" style="color:var(--gold)">Privacy Policy</a> and <a href="#" style="color:var(--gold)">Terms of Use</a>.
+      </p>`
+  } else if(type==='otp'){
+    b.innerHTML=`
+      <div class="modal-h">Verify OTP 📱</div>
+      <div class="modal-sub">Sent to +91 ${data||'XXXXXXXXXX'}</div>
+      <div class="otp-boxes">
+        ${[0,1,2,3,4,5].map(i=>`<input class="otp-b" id="ob${i}" maxlength="1" type="text" inputmode="numeric">`).join('')}
+      </div>
+      <button class="m-btn" onclick="verifyOtp('${data}')">Verify & Continue →</button>
+      <p style="text-align:center;margin-top:14px;font-size:13px;color:#333333">
+        Didn't receive? <a href="#" onclick="sendOtp('${data}')" style="color:var(--accent);font-weight:600">Resend OTP</a>
+      </p>`
+    setTimeout(()=>{
+      const bs=document.querySelectorAll('.otp-b')
+      bs[0]&&bs[0].focus()
+      bs.forEach((b,i)=>{
+        b.addEventListener('input',()=>{if(b.value&&bs[i+1])bs[i+1].focus()})
+        b.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!b.value&&bs[i-1])bs[i-1].focus()})
+      })
+    },50)
+  }
+}
+function closeModal(){document.getElementById('modalBg').classList.remove('show')}
+
+async function verifyOtp(phone){
+  const otp=[0,1,2,3,4,5].map(i=>document.getElementById('ob'+i).value).join('')
+  if(otp.length<6){alert('Please enter the 6-digit OTP.');return}
+  try{
+    const res=await fetch(`${API_BASE}/api/auth/verify-phone-otp`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({phone:'+91'+phone,code:otp,otp:otp})
+    })
+    const data=await res.json()
+    if(res.ok){
+      alert('✅ Verified! Welcome to RUBAROO!')
+      closeModal()
+      // Token save karo
+      if(data.token) localStorage.setItem('rubaroo_token',data.token)
+    } else {
+      alert(data.message||'Invalid OTP. Please try again.')
+    }
+  } catch(err){
+    alert('Network error. Please try again.')
+    console.error(err)
+  }
+}
+document.getElementById('modalBg').addEventListener('click',e=>{if(e.target.id==='modalBg')closeModal()})
+
+/* ─── CHATBOT ─── */
+let cOpen=false
+const BR={
+  'sign up':"Simple! Enter your mobile number on the homepage, verify via OTP, and set up your profile. Under 3 minutes. 📱",
+  'free':"Creating a profile and matching is completely free. Plus is ₹299/month, Gold is ₹499/month for premium features. No hidden fees. 💎",
+  'safe':"Your data is encrypted and never sold. We follow India's DPDP Act 2023. You control your profile visibility completely. 🔒",
+  'match':"Our AI reads personality, values, interests, and your NCR zone — not just photos. You get fewer but far better matches. 🤖",
+  'plan':"Free: 5 daily matches. Plus (₹299/mo): unlimited likes, who liked you. Gold (₹499/mo): everything in Plus + top placement & incognito mode. 💎",
+  'verify':"Every user goes through phone OTP verification. Optional Aadhaar verification gives you a trust badge. Our team reviews profiles in 24 hours. 🛡️",
+  'default':"Hi! 👋 I'm the RUBAROO assistant. I can help with sign up, plans, safety, matching, or anything else. What would you like to know?"
+}
+function tnow(){return new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'})}
+function addM(txt,from){
+  const m=document.getElementById('chatMsgs')
+  const d=document.createElement('div');d.className=`cm ${from}`
+  d.innerHTML=`<div class="cb">${txt}</div><div class="ct">${tnow()}</div>`
+  m.appendChild(d);m.scrollTop=m.scrollHeight
+}
+function showTyp(){
+  const m=document.getElementById('chatMsgs')
+  const d=document.createElement('div');d.className='cm bot';d.id='typd'
+  d.innerHTML=`<div class="cb"><div class="tdots"><span></span><span></span><span></span></div></div>`
+  m.appendChild(d);m.scrollTop=m.scrollHeight
+}
+function remTyp(){const t=document.getElementById('typd');if(t)t.remove()}
+function botR(txt){
+  showTyp()
+  setTimeout(()=>{
+    remTyp()
+    const k=Object.keys(BR).find(k=>txt.toLowerCase().includes(k))
+    addM(k?BR[k]:BR['default'],'bot')
+    document.getElementById('qkReps').style.display='none'
+  },1100)
+}
+function sendC(){
+  const i=document.getElementById('chatInp');const t=i.value.trim()
+  if(!t)return;addM(t,'usr');i.value='';botR(t)
+}
+function qs(t){addM(t,'usr');document.getElementById('qkReps').style.display='none';botR(t)}
+function toggleChat(){
+  cOpen=!cOpen
+  document.getElementById('chatWin').classList.toggle('open',cOpen)
+  const badge=document.getElementById('chatBadge')
+  if(badge)badge.style.display=cOpen?'none':'flex'
+  document.getElementById('chatFab').innerHTML=cOpen
+    ?'✕'
+    :`💬<div class="chat-badge" id="chatBadge">1</div>`
+  if(cOpen&&!document.getElementById('chatMsgs').children.length){
+    setTimeout(()=>addM("Hi! 👋 Welcome to RUBAROO — Delhi NCR's premium dating platform. How can I help you today?",'bot'),500)
+  }
+}
+</script>
+
+
+</body></html>
