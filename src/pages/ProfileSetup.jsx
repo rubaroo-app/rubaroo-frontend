@@ -38,7 +38,7 @@ const ProfileSetup = () => {
       formData.append("bio", form.bio);
       formData.append("intent", form.intent);
       if (form.photo) formData.append("photo", form.photo);
-      const res = await fetch("http://localhost:5000/api/profile/setup", { method: "POST", headers: { Authorization: "Bearer " + token }, body: formData });
+      const res = await fetch("https://rubaroo-production-dfa1.up.railway.app/api/profile/setup", { method: "POST", headers: { Authorization: "Bearer " + token }, body: formData });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "Something went wrong.");
       navigate("/dashboard");

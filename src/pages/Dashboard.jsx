@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API = "http://localhost:5000";
+const API = "https://rubaroo-production-dfa1.up.railway.app";
 
 const FALLBACK_PROFILES = [
   { _id: "mock1", name: "Priya Sharma", age: 26, location: { area: "Hauz Khas" }, bio: "Coffee lover | Startup life | Weekend hiker", matchScore: 94, photos: [{ url: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=500&fit=crop&crop=face" }] },

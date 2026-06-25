@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API = "http://localhost:5000";
+const API = "https://rubaroo-production-dfa1.up.railway.app";
 
 const PLANS = [
   { key: "plus", name: "Plus", price: 199, color: "#60a5fa", features: ["50 likes/day", "See who liked you", "Advanced filters", "Priority support"] },
