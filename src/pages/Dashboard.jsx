@@ -29,7 +29,7 @@ export default function Dashboard() {
   const [stats, setStats] = useState({ likedYou: 0, matchCount: 0 });
   const token = localStorage.getItem("token");
 
-  useEffect\(\(\) => \{ // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { // eslint-disable-next-line react-hooks/exhaustive-deps
     if (!token) { navigate("/login"); return; }
     const userData = localStorage.getItem("user");
     if (userData) setUser(JSON.parse(userData));
