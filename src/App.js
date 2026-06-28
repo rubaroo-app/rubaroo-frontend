@@ -1,11 +1,5 @@
+import LandingPage from './pages/LandingPage';
 import React, { useEffect } from "react";
-
-const LandingRedirect = () => {
-  useEffect(() => {
-    window.location.href = "/landing.html";
-  }, []);
-  return null;
-};
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -14,6 +8,8 @@ import Dashboard from "./pages/Dashboard";
 import ProfileSetup from "./pages/ProfileSetup";
 import Upgrade from "./pages/Upgrade";
 import Chat from "./pages/Chat";
+
+
 
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem("token");
@@ -24,7 +20,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LandingRedirect />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/otp-verify" element={<OtpVerify />} />
@@ -37,5 +33,9 @@ function App() {
     </Router>
   );
 }
-
 export default App;
+
+
+
+
+

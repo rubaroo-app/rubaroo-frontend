@@ -1,3 +1,4 @@
+﻿import RubarooLogo from '../components/RubarooLogo';
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 const ProfileSetup = () => {
@@ -139,3 +140,4 @@ const ProfileSetup = () => {
   );
 };
 export default ProfileSetup;
+

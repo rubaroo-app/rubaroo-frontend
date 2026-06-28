@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
-const API = 'https://rubaroo-production-dfa1.up.railway.app';
+const API = 'http://localhost:5000';
 
 const FONTS = `
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garant:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
