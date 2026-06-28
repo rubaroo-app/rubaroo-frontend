@@ -755,7 +755,7 @@ export default function Dashboard() {
                     <div className="rb-card">
                       <div className="rb-card-bg">
                         {currentProfile.photos && currentProfile.photos[0] ? (
-                          <img src={`${API}/${currentProfile.photos[0]}`} alt={currentProfile.name} />
+                          <img src={currentProfile.photos[0]?.url || currentProfile.photos[0]} alt={currentProfile.name} />
                         ) : (
                           <div className="rb-card-bg-placeholder">◈</div>
                         )}
@@ -825,7 +825,7 @@ export default function Dashboard() {
                       >
                         <div className="rb-match-avatar">
                           {other?.photos?.[0]
-                            ? <img src={`${API}/${other.photos[0]}`} alt={other.name} />
+                            ? <img src={`{other?.photos?.[0]?.url || other?.photos?.[0]}`} alt={other.name} />
                             : '◈'}
                         </div>
                         <div>
@@ -864,7 +864,7 @@ export default function Dashboard() {
                       >
                         <div className="rb-match-avatar" style={{ width: '52px', height: '52px' }}>
                           {other?.photos?.[0]
-                            ? <img src={`${API}/${other.photos[0]}`} alt={other.name} />
+                            ? <img src={`{other?.photos?.[0]?.url || other?.photos?.[0]}`} alt={other.name} />
                             : '◈'}
                         </div>
                         <div>
