@@ -77,18 +77,31 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-lang{background:transparent;border:1px solid var(--g3);color:var(--g6);padding:6px 12px;border-radius:20px;font-size:12px;cursor:pointer;}
 .btn-nav-out{padding:10px 24px;border:1.5px solid var(--g3);border-radius:50px;background:transparent;color:var(--white);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;}
 .btn-nav-out:hover{border-color:var(--white);}
-.btn-nav-fill{padding:10px 24px;border:none;border-radius:50px;background:var(--white);color:var(--black);font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;}
-.btn-nav-fill:hover{background:var(--g7);}
+.btn-nav-fill{padding:10px 24px;border:none;border-radius:50px;background:#b388ff;color:var(--black);font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;}
+.btn-nav-fill:hover{background:#c4a0ff;}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--black);padding:120px 40px 80px;position:relative;overflow:hidden;}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:60px 60px;}
-.hero-content{max-width:900px;width:100%;text-align:center;position:relative;z-index:1;}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--g3);border-radius:50px;padding:8px 20px;margin-bottom:40px;font-size:12px;font-weight:600;letter-spacing:2px;color:var(--g6);text-transform:uppercase;}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--black);padding:140px 40px 60px;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;}
+.hero-content{max-width:700px;width:100%;text-align:center;position:relative;z-index:1;}
+.hero-h1{font-family:'Cormorant Garant',serif;font-size:clamp(40px,6vw,56px);font-weight:700;line-height:1.15;color:var(--white);margin-bottom:8px;}
+.hero-h1-glow{font-family:'Cormorant Garant',serif;font-size:clamp(40px,6vw,56px);font-weight:300;font-style:italic;line-height:1.15;color:#b388ff;text-shadow:0 0 30px #b388ff30;margin-bottom:28px;}
+.hero-sub{font-size:16px;color:var(--g5);letter-spacing:0.5px;margin-bottom:40px;line-height:1.7;}
+.hero-ctas{display:flex;gap:14px;justify-content:center;margin-bottom:48px;flex-wrap:wrap;}
+.hero-cta-primary{padding:16px 36px;border-radius:50px;background:#b388ff;color:var(--black);font-size:15px;font-weight:700;border:none;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.hero-cta-primary:hover{background:#c4a0ff;}
+.hero-cta-secondary{padding:16px 36px;border-radius:50px;border:1.5px solid var(--g3);background:transparent;color:var(--white);font-size:15px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.hero-cta-secondary:hover{border-color:var(--white);}
+.hero-badges{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;}
+.hero-badge{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--g4);}
+.hero-badge-dot{width:8px;height:8px;border-radius:50%;}
+.hero-quote{background:var(--black);border-top:1px solid var(--g2);padding:48px 40px;text-align:center;}
+.hero-quote p{font-family:'Cormorant Garant',serif;font-size:24px;font-weight:300;font-style:italic;color:var(--g4);line-height:1.6;max-width:500px;margin:0 auto;}
+.hero-quote .hl-purple{color:#b388ff;}
+.hero-quote-tag{font-family:'DM Sans',sans-serif;font-size:11px;color:#ffd700;letter-spacing:2px;text-transform:uppercase;margin-top:20px;text-shadow:0 0 10px #ffd70060;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#ffd70060;}
 .pill-dot{width:6px;height:6px;border-radius:50%;background:var(--white);animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
-.hero-h1{font-family:'Cormorant Garant',serif;font-size:clamp(48px,8vw,96px);font-weight:700;line-height:1.05;color:var(--white);margin-bottom:24px;}
-.hero-h1 em{font-style:italic;color:var(--g6);}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--g3);border-radius:50px;padding:8px 20px;margin-bottom:40px;font-size:12px;font-weight:600;letter-spacing:2px;color:var(--g6);text-transform:uppercase;}
 .hero-tagline{font-size:18px;color:var(--g5);letter-spacing:1px;margin-bottom:48px;}
 .hero-tagline span{color:var(--g7);}
 .hero-otp{display:inline-flex;align-items:center;gap:0;background:var(--g1);border:1px solid var(--g3);border-radius:50px;padding:6px 6px 6px 20px;margin-bottom:12px;width:100%;max-width:460px;}
@@ -766,37 +779,40 @@ body.dark .step-cell{background:var(--g2);}
 <!-- HERO -->
 <section class="hero">
   <div class="hero-grid"></div>
-  <canvas id="particleCanvas"></canvas>
   <div class="hero-content">
-    <div class="hero-pill"><div class="pill-dot"></div><span>India's Most Trusted Dating Platform</span></div>
-    <h1 class="hero-h1">Real People.<br><em>Real Connections.</em></h1>
-    <p class="hero-tagline"><span>Verified</span> · <span>AI-Powered</span> · <span>Safe for Women</span> · <span>Made for India</span></p>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:40px;">
-      <div class="hero-otp">
-        <button class="ph-flag">🇮🇳 +91</button>
-        <input class="ph-in" type="tel" id="hp" placeholder="Enter mobile number" maxlength="10">
-        <button class="ph-go" onclick="handleOtp()">Send OTP →</button>
-      </div>
-      <div class="or-row">or continue with</div>
-      <div class="soc-row">
-        <button class="soc-btn" onclick="window.location.href='/register'">🔵 Google</button>
-        <button class="soc-btn" onclick="window.location.href='/login'">✉ Email</button>
-        <button class="soc-btn" onclick="window.location.href='/register'">🍎 Apple</button>
-      </div>
+    <h1 class="hero-h1">Don't just date<br>for time.</h1>
+    <div class="hero-h1-glow">Date for a lifetime.</div>
+    <p class="hero-sub">India's first dating platform built for serious, long-term<br>& lifelong relationships. Verified. Safe. Government compliant.</p>
+    <div class="hero-ctas">
+      <button class="hero-cta-primary" onclick="window.location.href='/login'">Join Free — Find Your Person</button>
+      <button class="hero-cta-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How It Works</button>
     </div>
-    <div class="hero-stats">
-      <div class="stat"><div class="stat-n">50L+</div><div class="stat-l">Active Users</div></div>
-      <div class="stat"><div class="stat-n">1M+</div><div class="stat-l">Matches Made</div></div>
-      <div class="stat"><div class="stat-n">4.8★</div><div class="stat-l">App Rating</div></div>
-      <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Verified Profiles</div></div>
-      <div class="stat"><div class="stat-n">50+</div><div class="stat-l">Cities</div></div>
+    <div class="hero-badges">
+      <div class="hero-badge"><div class="hero-badge-dot" style="background:#22c55e;"></div>100% Verified Profiles</div>
+      <div class="hero-badge"><div class="hero-badge-dot" style="background:#b388ff;"></div>AI-Powered Matching</div>
+      <div class="hero-badge"><div class="hero-badge-dot" style="background:#ffd700;"></div>Safe for Women</div>
+      <div class="hero-badge"><div class="hero-badge-dot" style="background:#ff6b6b;"></div>Govt. Compliant</div>
     </div>
   </div>
 </section>
 
+<!-- STATS BAR -->
+<div style="background:#0a0a0a;border-top:1px solid #1a1a1a;padding:28px 40px;display:flex;justify-content:center;gap:60px;flex-wrap:wrap;">
+  <div style="text-align:center;"><div class="stat-n">5L+</div><div class="stat-l">Verified Users</div></div>
+  <div style="text-align:center;"><div class="stat-n">50+</div><div class="stat-l">Cities</div></div>
+  <div style="text-align:center;"><div class="stat-n" style="color:#b388ff;">10K+</div><div class="stat-l">Matches Made</div></div>
+  <div style="text-align:center;"><div class="stat-n">4.8</div><div class="stat-l">App Rating</div></div>
+</div>
+
+<!-- QUOTE -->
+<div class="hero-quote">
+  <p>"Where our parents found forever in a single glance, we lost it in a thousand swipes. <span class="hl-purple">Rubaroo bridges that gap.</span>"</p>
+  <div class="hero-quote-tag">India's Most Trusted Dating Platform</div>
+</div>
+
 <!-- TICKER -->
 <div class="ticker"><div class="ticker-track">
-  <span class="ticker-item">50 Lakh+ Active Users</span><span class="ticker-item">1 Million+ Matches</span><span class="ticker-item">4.8★ App Rating</span><span class="ticker-item">100% Verified</span><span class="ticker-item">Pan India</span><span class="ticker-item">Free to Join</span><span class="ticker-item">Zero Fake Profiles</span><span class="ticker-item">AI-Powered</span><span class="ticker-item">Safe for Women</span><span class="ticker-item">Women Message First</span><span class="ticker-item">50 Lakh+ Active Users</span><span class="ticker-item">1 Million+ Matches</span><span class="ticker-item">4.8★ App Rating</span><span class="ticker-item">100% Verified</span><span class="ticker-item">Pan India</span><span class="ticker-item">Free to Join</span><span class="ticker-item">Zero Fake Profiles</span><span class="ticker-item">AI-Powered</span><span class="ticker-item">Safe for Women</span><span class="ticker-item">Women Message First</span>
+  <span class="ticker-item">Verified Profiles</span><span class="ticker-item">AI-Powered Matching</span><span class="ticker-item">4.8★ App Rating</span><span class="ticker-item">Govt. Compliant</span><span class="ticker-item">Pan India</span><span class="ticker-item">Free to Join</span><span class="ticker-item">Safe for Women</span><span class="ticker-item">Date for a Lifetime</span><span class="ticker-item">Verified Profiles</span><span class="ticker-item">AI-Powered Matching</span><span class="ticker-item">4.8★ App Rating</span><span class="ticker-item">Govt. Compliant</span><span class="ticker-item">Pan India</span><span class="ticker-item">Free to Join</span><span class="ticker-item">Safe for Women</span><span class="ticker-item">Date for a Lifetime</span>
 </div></div>
 
 <!-- INTENT -->
