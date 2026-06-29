@@ -70,9 +70,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-brand-hi{font-family:'Martel',serif;font-size:18px;letter-spacing:5px;color:var(--white);font-weight:700;align-self:center;}
 .nav-brand-hi .hi-glow{color:#b388ff;text-shadow:0 0 14px #b388ff80,0 0 28px #b388ff40;}
 .nav-brand-tag{font-family:'DM Sans',sans-serif;font-size:10px;color:#ffd700;letter-spacing:2.5px;text-transform:uppercase;text-shadow:0 0 10px #ffd70080,0 0 20px #ffd70040;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#ffd70080;align-self:center;}
-.nav-links{display:flex;gap:28px;list-style:none;}
-.nav-links a{color:var(--g6);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
-.nav-links a:hover{color:var(--white);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{color:var(--white);text-decoration:none;font-size:16px;font-weight:600;transition:all .2s;text-shadow:0 0 8px rgba(255,255,255,0.2);letter-spacing:0.3px;}
+.nav-links a:hover{text-shadow:0 0 14px rgba(255,255,255,0.5);}
 .nav-cta{display:flex;gap:12px;align-items:center;}
 .nav-lang{background:transparent;border:1px solid var(--g3);color:var(--g6);padding:6px 12px;border-radius:20px;font-size:12px;cursor:pointer;}
 .btn-nav-out{padding:10px 24px;border:1.5px solid var(--g3);border-radius:50px;background:transparent;color:var(--white);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;}
@@ -90,8 +90,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-ctas{display:flex;gap:14px;justify-content:center;margin-bottom:48px;flex-wrap:wrap;}
 .hero-cta-primary{padding:16px 36px;border-radius:50px;background:#b388ff;color:var(--black);font-size:15px;font-weight:700;border:none;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
 .hero-cta-primary:hover{background:#c4a0ff;}
-.hero-cta-secondary{padding:16px 36px;border-radius:50px;border:1.5px solid var(--g3);background:transparent;color:var(--white);font-size:15px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
-.hero-cta-secondary:hover{border-color:var(--white);}
+.hero-cta-create{padding:16px 36px;border-radius:50px;background:linear-gradient(135deg,#fd5564,#ff7854);border:none;color:var(--white);font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;box-shadow:0 0 20px #fd556440;}
+.hero-cta-create:hover{box-shadow:0 0 30px #fd556460;transform:scale(1.02);}
 .hero-badges{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;}
 .hero-badge{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--g4);}
 .hero-badge-dot{width:8px;height:8px;border-radius:50%;}
@@ -762,17 +762,10 @@ body.dark .step-cell{background:var(--g2);}
   </a>
   <ul class="nav-links">
     <li><a href="#how">How it Works</a></li>
-    <li><a href="#features">Features</a></li>
     <li><a href="#safety">Safety</a></li>
     <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#app">Get App</a></li>
+    <li><a href="#stories">Stories</a></li>
   </ul>
-  <div class="nav-cta">
-    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
-    <button class="nav-lang" onclick="toggleLang()">🇮🇳 EN</button>
-    <button class="btn-nav-out" onclick="window.location.href='/login'">Sign In</button>
-    <button class="btn-nav-fill" onclick="window.location.href='/login'">Join Free →</button>
-  </div>
 </nav>
 
 <!-- HERO -->
@@ -783,8 +776,8 @@ body.dark .step-cell{background:var(--g2);}
     <div class="hero-h1-glow">Date for a lifetime.</div>
     <p class="hero-sub">India's first dating platform built for serious, long-term<br>& lifelong relationships. Verified. Safe. Government compliant.</p>
     <div class="hero-ctas">
-      <button class="hero-cta-primary" onclick="window.location.href='/login'">Join Free — Find Your Person</button>
-      <button class="hero-cta-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How It Works</button>
+      <button class="hero-cta-primary" onclick="window.location.href='/login'">Step Into Rubaroo</button>
+      <button class="hero-cta-create" onclick="window.location.href='/login'">Create Account</button>
     </div>
     <div class="hero-badges">
       <div class="hero-badge"><div class="hero-badge-dot" style="background:#22c55e;"></div>100% Verified Profiles</div>
