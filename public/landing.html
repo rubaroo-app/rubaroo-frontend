@@ -47,7 +47,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RUBAROO — India's Most Trusted Dating Platform</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Lavishly+Yours&family=Martel:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--black:#000;--white:#fff;--g1:#111;--g2:#222;--g3:#333;--g4:#555;--g5:#888;--g6:#aaa;--g7:#ccc;--g8:#eee;--g9:#f5f5f5;}
@@ -58,9 +58,10 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--white);color:va
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px;background:var(--black);border-bottom:1px solid var(--g2);}
 .nav-brand{display:flex;flex-direction:column;line-height:1;gap:4px;text-decoration:none;}
 .nav-brand-en{font-family:'Cormorant Garant',serif;font-size:28px;font-weight:700;letter-spacing:6px;color:var(--white);}
-.nav-brand-en .r-logo{font-family:'Bodoni Moda',serif;font-weight:900;font-size:34px;font-style:italic;letter-spacing:2px;}
+.nav-brand-en .r-logo{font-family:'Lavishly Yours',cursive;font-size:50px;color:#b388ff;text-shadow:0 0 14px #b388ff80,0 0 28px #b388ff40;letter-spacing:2px;}
 .nav-brand-en .hl{color:var(--g6);}
-.nav-brand-hi{font-size:13px;letter-spacing:4px;color:var(--g6);font-weight:500;}
+.nav-brand-hi{font-family:'Martel',serif;font-size:20px;letter-spacing:5px;color:var(--white);font-weight:700;}
+.nav-brand-hi .hi-glow{color:#b388ff;text-shadow:0 0 14px #b388ff80,0 0 28px #b388ff40;}
 .nav-links{display:flex;gap:28px;list-style:none;}
 .nav-links a{color:var(--g6);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
 .nav-links a:hover{color:var(--white);}
@@ -347,7 +348,8 @@ textarea.ifield{resize:vertical;min-height:100px;margin-bottom:12px;}
 footer{background:var(--black);padding:60px 40px 32px;color:var(--g6);}
 .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
 .ft-brand-n{font-family:'Cormorant Garant',serif;font-size:28px;font-weight:700;color:var(--white);letter-spacing:4px;margin-bottom:8px;}
-.ft-brand-s{font-size:13px;color:var(--g5);margin-bottom:20px;}
+.ft-brand-s{font-family:'Martel',serif;font-size:18px;color:var(--white);font-weight:700;letter-spacing:5px;margin-bottom:20px;}
+.ft-brand-s .hi-glow{color:#b388ff;text-shadow:0 0 14px #b388ff80,0 0 28px #b388ff40;}
 .ft-socials{display:flex;gap:12px;margin-top:16px;}
 .ft-soc{width:36px;height:36px;border-radius:50%;border:1px solid var(--g3);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:border-color .2s;}
 .ft-soc:hover{border-color:var(--white);}
@@ -725,8 +727,8 @@ body.dark .step-cell{background:var(--g2);}
 <!-- NAV -->
 <nav id="nav">
   <a class="nav-brand" href="#">
-    <span class="nav-brand-en"><span class="r-logo">R</span>U<span class="hl">B</span>A<span class="r-logo">R</span>O<span class="hl">O</span></span>
-    <span class="nav-brand-hi">रू · ब · रू</span>
+    <span class="nav-brand-en"><span class="r-logo">R</span>UBAROO</span>
+    <span class="nav-brand-hi"><span class="hi-glow">रू</span> · ब · रू</span>
   </a>
   <ul class="nav-links">
     <li><a href="#how">How it Works</a></li>
@@ -738,8 +740,8 @@ body.dark .step-cell{background:var(--g2);}
   <div class="nav-cta">
     <button class="dark-toggle" onclick="toggleDark()">🌙</button>
     <button class="nav-lang" onclick="toggleLang()">🇮🇳 EN</button>
-    <button class="btn-nav-out" onclick="openModal('login')">Sign In</button>
-    <button class="btn-nav-fill" onclick="openModal('reg')">Join Free →</button>
+    <button class="btn-nav-out" onclick="window.location.href='/login'">Sign In</button>
+    <button class="btn-nav-fill" onclick="window.location.href='/login'">Join Free →</button>
   </div>
 </nav>
 
@@ -972,7 +974,7 @@ body.dark .step-cell{background:var(--g2);}
         </div>
       </div>
       <p style="font-size:14px;color:var(--g5);margin-bottom:20px;">Register free to unlock their profiles</p>
-      <button class="blur-cta" onclick="openModal('reg')">Unlock Profiles →</button>
+      <button class="blur-cta" onclick="window.location.href='/login'">Unlock Profiles →</button>
     </div>
   </div>
 </section>
@@ -1059,7 +1061,7 @@ body.dark .step-cell{background:var(--g2);}
         <div class="kundali-label" id="kundaliLabel">Excellent Match! ⭐</div>
         <div class="kundali-rashis" id="kundaliRashis"></div>
         <button class="kundali-share" onclick="shareKundali()">Share Result 📤</button>
-        <div style="margin-top:20px;"><button class="kundali-btn" onclick="openModal('reg')" style="padding:12px 24px;font-size:14px;">Find Your Match on RUBAROO →</button></div>
+        <div style="margin-top:20px;"><button class="kundali-btn" onclick="window.location.href='/login'" style="padding:12px 24px;font-size:14px;">Find Your Match on RUBAROO →</button></div>
       </div>
     </div>
   </div>
@@ -1082,7 +1084,7 @@ body.dark .step-cell{background:var(--g2);}
         <div class="calc-score" id="calcScore">0%</div>
         <div class="calc-verdict" id="calcVerdict"></div>
         <button class="calc-share" onclick="shareCalc()">Share this result 📤</button>
-        <div style="margin-top:20px;"><button onclick="openModal('reg')" style="padding:12px 28px;border:none;border-radius:50px;background:var(--black);color:var(--white);font-size:14px;font-weight:700;cursor:pointer;">Find Real Matches on RUBAROO →</button></div>
+        <div style="margin-top:20px;"><button onclick="window.location.href='/login'" style="padding:12px 28px;border:none;border-radius:50px;background:var(--black);color:var(--white);font-size:14px;font-weight:700;cursor:pointer;">Find Real Matches on RUBAROO →</button></div>
       </div>
     </div>
   </div>
@@ -1269,23 +1271,23 @@ body.dark .step-cell{background:var(--g2);}
       <div class="pcard">
         <div class="plan-name">Free</div><div class="plan-price"><span>₹</span>0</div><div class="plan-cycle">Forever free</div>
         <ul class="plan-features"><li>Create full profile</li><li>5 matches per day</li><li>In-app chat</li><li>City filter</li><li>Basic visibility</li></ul>
-        <button class="btn-plan btn-plan-out" onclick="openModal('reg')">Get Started</button>
+        <button class="btn-plan btn-plan-out" onclick="window.location.href='/login'">Get Started</button>
       </div>
       <div class="pcard featured">
         <div class="featured-tag">Most Popular</div>
         <div class="plan-name">Plus</div><div class="plan-price"><span>₹</span>199</div><div class="plan-cycle">per month</div>
         <ul class="plan-features"><li>Unlimited likes</li><li>See who liked you</li><li>Priority visibility</li><li>Advanced filters</li><li>Voice & video calls</li><li>Read receipts</li></ul>
-        <button class="btn-plan btn-plan-fill" onclick="openModal('reg')">Start with Plus</button>
+        <button class="btn-plan btn-plan-fill" onclick="window.location.href='/login'">Start with Plus</button>
       </div>
       <div class="pcard">
         <div class="plan-name">Gold</div><div class="plan-price"><span>₹</span>499</div><div class="plan-cycle">per month</div>
         <ul class="plan-features"><li>Everything in Plus</li><li>Top placement daily</li><li>Gold badge</li><li>Undo last pass</li><li>Incognito mode</li><li>1 Boost/week</li></ul>
-        <button class="btn-plan btn-plan-out" onclick="openModal('reg')">Go Gold</button>
+        <button class="btn-plan btn-plan-out" onclick="window.location.href='/login'">Go Gold</button>
       </div>
       <div class="pcard">
         <div class="plan-name">Business</div><div class="plan-price"><span>₹</span>999</div><div class="plan-cycle">per month</div>
         <ul class="plan-features"><li>Everything in Gold</li><li>Unlimited Boosts</li><li>Unlimited Super Likes</li><li>Profile Manager</li><li>Priority Support</li><li>API Access</li></ul>
-        <button class="btn-plan btn-plan-out" onclick="openModal('reg')">Go Business</button>
+        <button class="btn-plan btn-plan-out" onclick="window.location.href='/login'">Go Business</button>
       </div>
     </div>
   </div>
@@ -1358,7 +1360,7 @@ body.dark .step-cell{background:var(--g2);}
         <div style="background:var(--g9);border-radius:12px;padding:16px;margin-top:8px;">
           <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--g5);margin-bottom:10px;">🤖 AI suggests a date plan</div>
           <div style="font-size:14px;color:var(--black);line-height:1.7;">📍 <strong>Old Delhi Heritage Walk</strong><br>Start at Jama Masjid → Paranthe Wali Gali for lunch → Chandni Chowk chai → end at Hauz Khas for sunset<br><span style="color:var(--g5);font-size:12px;">Budget: ₹500 · Duration: 4 hours · Vibe: Casual & Fun</span></div>
-          <button class="dp-cta" onclick="openModal('reg')">Share this plan with her →</button>
+          <button class="dp-cta" onclick="window.location.href='/login'">Share this plan with her →</button>
         </div>
       </div>
       <div>
@@ -1489,8 +1491,9 @@ body.dark .step-cell{background:var(--g2);}
 <footer>
   <div class="ft-grid">
     <div>
-      <div class="ft-brand-n"><span class="r-logo">R</span>UBA<span class="r-logo">R</span>OO</div>
-      <div class="ft-brand-s">रूबरू · Made with ♥ in India</div>
+      <div class="ft-brand-n"><span class="r-logo">R</span>UBAROO</div>
+      <div class="ft-brand-s"><span class="hi-glow">रू</span> · ब · रू</div>
+      <div style="font-size:12px;color:var(--g5);margin-bottom:16px;">Made with ♥ in India</div>
       <p style="font-size:13px;color:var(--g5);line-height:1.6;max-width:280px;">India's most trusted dating platform. Real people, real connections, across all of India.</p>
       <div class="ft-socials">
         <div class="ft-soc">𝕏</div>
@@ -1553,15 +1556,14 @@ function toggleLang(){
   document.querySelector('.nav-lang').textContent=lang==='en'?'🇮🇳 EN':'🇮🇳 HI';
 }
 
-// OTP
+// OTP — redirect to React app login
 function handleOtp(){
   const p=document.getElementById('hp').value.trim();
   if(p.length<10){alert('Please enter a valid 10-digit mobile number.');return;}
-  sendOtp(p);
+  window.location.href='/login';
 }
-async function sendOtp(phone){
-  try{await fetch(`${API}/api/auth/send-otp`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:'+91'+phone})});}catch(e){}
-  openModal('otp',phone);
+function sendOtp(phone){
+  window.location.href='/login';
 }
 
 // MODAL
@@ -1569,7 +1571,7 @@ function openModal(type,data){
   document.getElementById('modalBg').classList.add('show');
   const b=document.getElementById('modalBody');
   if(type==='login'){
-    b.innerHTML=`<div class="modal-h">Welcome Back ♥</div><div class="modal-sub">Sign in to your account</div><div class="m-label">Mobile number</div><div class="m-ph-row"><button class="m-flag">🇮🇳 +91</button><input class="m-in" id="mp" type="tel" placeholder="Enter number" maxlength="10"></div><button class="m-btn" onclick="sendOtp(document.getElementById('mp').value)">Send OTP →</button><div class="m-or">or</div><button class="m-soc">✉ Sign in with Email</button><p style="text-align:center;margin-top:16px;font-size:13px;color:#888">New here? <a onclick="openModal('reg')" style="color:#000;cursor:pointer;font-weight:600">Create account →</a></p>`;
+    b.innerHTML=`<div class="modal-h">Welcome Back ♥</div><div class="modal-sub">Sign in to your account</div><div class="m-label">Mobile number</div><div class="m-ph-row"><button class="m-flag">🇮🇳 +91</button><input class="m-in" id="mp" type="tel" placeholder="Enter number" maxlength="10"></div><button class="m-btn" onclick="sendOtp(document.getElementById('mp').value)">Send OTP →</button><div class="m-or">or</div><button class="m-soc">✉ Sign in with Email</button><p style="text-align:center;margin-top:16px;font-size:13px;color:#888">New here? <a onclick="window.location.href='/login'" style="color:#000;cursor:pointer;font-weight:600">Create account →</a></p>`;
   }else if(type==='reg'){
     b.innerHTML=`<div class="modal-h">Join Free →</div><div class="modal-sub">India's most trusted dating platform</div><div class="m-label">Mobile number</div><div class="m-ph-row"><button class="m-flag">🇮🇳 +91</button><input class="m-in" id="rp" type="tel" placeholder="Enter number" maxlength="10"></div><button class="m-btn" onclick="sendOtp(document.getElementById('rp').value)">Create Account — Send OTP →</button><div class="m-or">or</div><button class="m-soc">✉ Register with Email</button><p style="text-align:center;margin-top:14px;font-size:12px;color:#888">By registering you agree to our <a href="#" style="color:#000">Privacy Policy</a> and <a href="#" style="color:#000">Terms</a>.</p>`;
   }else if(type==='otp'){
@@ -1594,7 +1596,7 @@ async function verifyOtp(phone){
 function selectIntent(el,type){
   document.querySelectorAll('.intent-card').forEach(c=>c.classList.remove('selected'));
   el.classList.add('selected');
-  setTimeout(()=>openModal('reg'),600);
+  setTimeout(()=>window.location.href='/login',600);
 }
 
 // SWIPE DEMO
@@ -2093,7 +2095,7 @@ function renderQuiz(){
   if(qIdx >= quizData.length){
     const types = ['The Romantic 💝','The Adventurer 🏔️','The Intellectual 🧠','The Nurturer 🌸'];
     const type = types[Math.floor(Math.random()*types.length)];
-    content.innerHTML = `<div class="quiz-result"><div style="font-size:20px;color:var(--g6);margin-bottom:8px;">You are...</div><div class="quiz-score">${type}</div><div style="font-size:15px;color:var(--g6);margin-bottom:24px;">People like you get 3x more meaningful matches on RUBAROO</div><button class="quiz-btn" onclick="openModal('reg')">Find Your Match →</button></div>`;
+    content.innerHTML = `<div class="quiz-result"><div style="font-size:20px;color:var(--g6);margin-bottom:8px;">You are...</div><div class="quiz-score">${type}</div><div style="font-size:15px;color:var(--g6);margin-bottom:24px;">People like you get 3x more meaningful matches on RUBAROO</div><button class="quiz-btn" onclick="window.location.href='/login'">Find Your Match →</button></div>`;
     for(let i=0;i<5;i++) document.getElementById('qs'+i).classList.add('done');
     return;
   }
@@ -2124,7 +2126,7 @@ window.addEventListener('scroll',()=>{document.getElementById('nav').style.boxSh
     <div class="exit-h">Wait! Don't leave yet</div>
     <div class="exit-p">Get <strong>1 month Plus for free</strong> when you sign up in the next few minutes. No card required.</div>
     <div class="exit-timer" id="exitTimer">04:59</div>
-    <button class="exit-btn" onclick="openModal('reg');document.getElementById('exitPopup').classList.remove('show')">Claim Free Month →</button>
+    <button class="exit-btn" onclick="window.location.href='/login';document.getElementById('exitPopup').classList.remove('show')">Claim Free Month →</button>
     <button class="exit-skip" onclick="document.getElementById('exitPopup').classList.remove('show')">No thanks, I'll pay full price later</button>
   </div>
 </div>
@@ -2139,7 +2141,7 @@ window.addEventListener('scroll',()=>{document.getElementById('nav').style.boxSh
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta" id="stickyCta">
-  <button onclick="openModal('reg')">Join Free — Find Your Person →</button>
+  <button onclick="window.location.href='/login'">Join Free — Find Your Person →</button>
 </div>
 
 <script>
